@@ -1,0 +1,36 @@
+name: diary_app
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite: ^2.0.0+4
+  intl: ^0.19.0
+  image_picker: ^1.1.2
+  flutter_staggered_grid_view: ^0.4.0
+
+  shared_preferences: ^2.3.2
+  # SQLite database support
+  path_provider: ^2.0.9
+  google_fonts: ^6.2.1
+  # Access file paths on the device
+  # Add additional dependencies here as needed
+  # e.g., provider: ^6.0.0 for state management
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  # Include assets here if you have any
+  # assets:
+  #   - images/
+  #   - fonts/
