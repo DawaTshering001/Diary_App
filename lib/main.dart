@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/home_screen.dart';
+import 'screens/login_page.dart'; // Import the login page
 
 void main() {
   runApp(const DiaryApp());
@@ -24,28 +24,28 @@ class _DiaryAppState extends State<DiaryApp> {
       theme: _isDarkMode
           ? ThemeData.dark()
           : ThemeData(
-        primaryColor: Colors.purple[800], // Primary color for light theme
-        hintColor: Colors.purpleAccent[400], // Hint color for light theme
-        scaffoldBackgroundColor: Colors.purple[50], // Background color for light theme
+        primaryColor: Colors.purple[800],
+        hintColor: Colors.purpleAccent[400],
+        scaffoldBackgroundColor: Colors.purple[50],
         textTheme: GoogleFonts.latoTextTheme(
           TextTheme(
-            bodyLarge: TextStyle(fontSize: 18, color: Colors.purple[800]), // Body text color
+            bodyLarge: TextStyle(fontSize: 18, color: Colors.purple[800]),
             bodyMedium: TextStyle(fontSize: 16, color: Colors.black87),
           ),
         ),
         appBarTheme: AppBarTheme(
-          color: Colors.purple[800], // AppBar color for light theme
+          color: Colors.purple[800],
           titleTextStyle: TextStyle(fontSize: 20, color: Colors.white),
           iconTheme: IconThemeData(color: Colors.white),
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.purpleAccent[400], // FAB background color
+          backgroundColor: Colors.purpleAccent[400],
           foregroundColor: Colors.white,
         ),
-        cardColor: Colors.white, // Card color for light theme
+        cardColor: Colors.white,
       ),
       darkTheme: ThemeData.dark().copyWith(
-        primaryColor: Colors.purple[800], // Primary color for dark theme
+        primaryColor: Colors.purple[800],
         scaffoldBackgroundColor: Colors.black,
         textTheme: GoogleFonts.latoTextTheme(
           TextTheme(
@@ -54,19 +54,13 @@ class _DiaryAppState extends State<DiaryApp> {
           ),
         ),
         appBarTheme: AppBarTheme(
-          color: Colors.purple[700], // AppBar color for dark theme
+          color: Colors.purple[700],
           titleTextStyle: TextStyle(fontSize: 20, color: Colors.white),
           iconTheme: IconThemeData(color: Colors.white),
         ),
-        cardColor: Colors.grey[800], // Card color for dark theme
+        cardColor: Colors.grey[800],
       ),
-      home: HomeScreen(
-        onToggleTheme: () {
-          setState(() {
-            _isDarkMode = !_isDarkMode; // Toggle dark mode
-          });
-        },
-      ),
+      home: LoginPage(), // Set LoginPage as the initial screen
     );
   }
 }
