@@ -3,6 +3,7 @@ import '../database_helper.dart';
 import '../models/diary_entry.dart';
 import '../widgets/entry_tile.dart';
 import '../widgets/entry_dialog.dart';
+import 'login_page.dart'; // Import your login page
 
 class HomeScreen extends StatefulWidget {
   final void Function() onToggleTheme;
@@ -75,6 +76,14 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  void _logout() {
+    // Navigate back to the LoginPage
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) => LoginPage()), // Change this to your login page
+          (route) => false, // Removes all previous routes
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,6 +137,13 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Text('About'),
               onTap: () {
                 Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: () {
+                _logout(); // Call logout method
               },
             ),
           ],
